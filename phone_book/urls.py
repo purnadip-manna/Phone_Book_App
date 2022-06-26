@@ -3,7 +3,7 @@ from django.urls import include, path
 from .views import *
 
 urlpatterns = [
-    path('', index, "index_page"),
+    path('', index, name="index_page"),
     path('admin/', admin.site.urls),
     path('app/', include('phone_book_app.urls'))
 ]
