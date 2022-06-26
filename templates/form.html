@@ -22,25 +22,49 @@
     <span class="h3">New Contact</span>
     <br>
     <br>
-    <form method="GET" action="./add">
-        <div class="row">
-            <div class="col-sm-4">
-                <b>First Name:</b>
-                <input type="text" class="form-control" name="fname" required>
+    {% if update is True %}
+        <form method="GET" action="/app/update">
+            <input type="number" name="id" value="{{id}}" hidden>
+            <div class="row">
+                <div class="col-sm-4">
+                    <b>First Name:</b>
+                    <input type="text" class="form-control" name="fname" value="{{fname}}" required>
+                </div>
+                <div class="col-sm-4">
+                    <b>Last Name:</b>
+                    <input type="text" class="form-control" name="lname" value="{{lname}}">
+                </div>
+                <div class="col-sm-4">
+                    <b>Phone No:</b>
+                    <input type="text" class="form-control" name="phnno" value="{{phnno}}" required>
+                </div>
             </div>
-            <div class="col-sm-4">
-                <b>Last Name:</b>
-                <input type="text" class="form-control" name="lname">
+            <br>
+            <button class="btn btn-success" style="width:10rem;"> Edit 
+            </button>
+        </form>
+
+    {% else %}
+        <form method="GET" action="./add">
+            <div class="row">
+                <div class="col-sm-4">
+                    <b>First Name:</b>
+                    <input type="text" class="form-control" name="fname" required>
+                </div>
+                <div class="col-sm-4">
+                    <b>Last Name:</b>
+                    <input type="text" class="form-control" name="lname">
+                </div>
+                <div class="col-sm-4">
+                    <b>Phone No:</b>
+                    <input type="text" class="form-control" name="phnno" required>
+                </div>
             </div>
-            <div class="col-sm-4">
-                <b>Phone No:</b>
-                <input type="text" class="form-control" name="phnno" required>
-            </div>
-        </div>
-        <br>
-        <button class="btn btn-success" style="width:10rem;"> Save 
-        </button>
-    </form>
+            <br>
+            <button class="btn btn-success" style="width:10rem;"> Save 
+            </button>
+        </form>
+    {% endif %}
   </div>
 
 {% endblock body %}
