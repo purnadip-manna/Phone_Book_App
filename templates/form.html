@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
-{% block title %}New Contact{% endblock title %}
+{% block title %}
+    {% if update is True %}
+        Update Contact
+    {% else %}
+        New Contact
+    {% endif %}
+{% endblock title %}
 
 {% block headcontent %}
     <style>
@@ -19,10 +25,10 @@
   </svg> Phone Book App</h1>
   <br>
   <div class="container-fluid">
-    <span class="h3">New Contact</span>
-    <br>
-    <br>
     {% if update is True %}
+    <span class="h3">Update Contact</span>
+    <br>
+    <br>
         <form method="GET" action="/app/update">
             <input type="number" name="id" value="{{id}}" hidden>
             <div class="row">
@@ -45,6 +51,9 @@
         </form>
 
     {% else %}
+    <span class="h3">New Contact</span>
+    <br>
+    <br>
         <form method="GET" action="./add">
             <div class="row">
                 <div class="col-sm-4">
