@@ -17,7 +17,7 @@ Clicking `+ Add Contact` button we can add new contact.
 
 ![NewConact](./img/newcontact.png)
 
-## Updated Contact:
+## Update Contact:
 Clicking the edit button *(yellow)* we can update an existing contact.
 
 ![Updatecontact1](./img/up1.png)
